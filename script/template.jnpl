@@ -1,0 +1,22 @@
+<jnlp codebase="@codebase@" spec="1.0+">
+    <information>
+        <title>@title@</title>
+        <vendor>Gornova</vendor>
+        <description kind="short">@description@</description>
+        <homepage href="@homepage@">
+        <offline-allowed>
+        <shortcut online="false">
+            <desktop>
+        </desktop></shortcut>
+    </offline-allowed></homepage></information>
+    <security>
+        <all-permissions>
+    </all-permissions></security>
+    <resources>
+        <j2se version="1.6+">
+        <jar href="@jarname@">
+        <jar href="marteEngine.jar">
+        <extension href="http://anotherearlymorning.com/games/slick/Slick.jnlp">
+    </extension></jar></jar></j2se></resources>
+    <application-desc main-class="@mainclass@">
+</application-desc></jnlp>
