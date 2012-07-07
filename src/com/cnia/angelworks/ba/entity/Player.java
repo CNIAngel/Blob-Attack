@@ -64,14 +64,14 @@ public class Player extends PhysicsEntity {
 		Input input = gc.getInput();
 
 		onGround = false;
-		if (collide(SOLID, x, y + jumpSpeed) != null) {
+		if (collide(SOLID, x, y + 1) != null) {
 			onGround = true;
 			isJumping = false;
 		}
 
 		if (check("LEFT")) {
 
-			if (collide(SOLID, x - moveSpeed, y) != null) {
+			if (collide(SOLID, x - 2, y) != null) {
 
 				x -= 0;
 			} else {
@@ -82,7 +82,7 @@ public class Player extends PhysicsEntity {
 
 		if (check("RIGHT")) {
 
-			if (collide(SOLID, x + moveSpeed, y) != null) {
+			if (collide(SOLID, x + 3, y) != null) {
 
 				x += 0;
 			} else {
