@@ -105,8 +105,17 @@ public class Level extends World {
 		super.update(gc, sbg, delta);
 
 		Input input = container.getInput();
+		
+		// If the space key is pressed, hide all tiles
+		// except the tiles that have collision.
 		if (input.isKeyPressed(Input.KEY_SPACE)) {
 			hideTiles = hideTiles ? false : true;
+		}
+		
+		// If the escape key is pressed, the game instance
+		// ends.
+		if (input.isKeyPressed(Input.KEY_ESCAPE)) {
+			gc.exit();
 		}
 
 	}

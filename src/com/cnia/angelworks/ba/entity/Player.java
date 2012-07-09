@@ -18,7 +18,7 @@ import org.newdawn.slick.Sound;
 public class Player extends PhysicsEntity {
 
 	private int moveSpeed = 4, jumpSpeed = 11; // SUPER JUMP!!!!
-	private boolean isJumping, onGround;
+	private boolean isJumping, onGround, isFalling;
 	private Image img; // an Image instance for the sprite
 	private Sound jmpSound = ResourceManager.getSound("jmpSound");
 
@@ -94,7 +94,9 @@ public class Player extends PhysicsEntity {
 
 		if (pressed("UP")) {
 			boolean jumped = false;
-
+			
+			
+			
 			// normal jump
 			if (onGround) {
 				speed.y = -jumpSpeed;
@@ -102,11 +104,13 @@ public class Player extends PhysicsEntity {
 				jumped = true;
 				isJumping = true;
 			}
-
-			if (isJumping) {
+			
+			/**if (isJumping) {
 				speed.y = -jumpSpeed;
 				jmpSound.play();
-			}
+				isFalling = true;
+			} */
+				
 		}
 
 		gravity(delta);
