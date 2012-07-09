@@ -16,7 +16,6 @@ public class Setup extends StateBasedGame {
 
 	public Setup(String name) {
 		super(name);
-		// TODO Auto-generated constructor stub
 	}
 
 	/*

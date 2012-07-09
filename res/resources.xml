@@ -16,7 +16,7 @@
     <image key="doc" file="traveler.png" />
     <image key="bg" file="bg.png" />
     <!-- Sounds -->
-    
+    <sound key="jmpSound" file="sound/Jump.wav" />
     <!-- Sheets -->
     <sheet key="movement" file="blobber_movement.png" width="16" height="16" />
     <sheet key="groundsheet" file="ground_tiles.png" width="16" height="16" />
