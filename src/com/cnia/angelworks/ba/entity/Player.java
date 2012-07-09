@@ -8,6 +8,7 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.Sound;
 
 /**
  * @author CNIAngel This is a simple example for a player entity class. It will
@@ -19,6 +20,7 @@ public class Player extends PhysicsEntity {
 	private int moveSpeed = 4, jumpSpeed = 11; // SUPER JUMP!!!!
 	private boolean isJumping, onGround;
 	private Image img; // an Image instance for the sprite
+	private Sound jmpSound = ResourceManager.getSound("jmpSound");
 
 	/**
 	 * @param x
@@ -26,7 +28,6 @@ public class Player extends PhysicsEntity {
 	 */
 	public Player(float x, float y) {
 		super(x, y);
-		// TODO Auto-generated constructor stub
 
 		img = ResourceManager.getImage("doc"); // Set the image to the desired
 												// sprite
@@ -97,16 +98,15 @@ public class Player extends PhysicsEntity {
 			// normal jump
 			if (onGround) {
 				speed.y = -jumpSpeed;
-				// jumpSnd.play();
+				jmpSound.play();
 				jumped = true;
 				isJumping = true;
 			}
 
 			if (isJumping) {
 				speed.y = -jumpSpeed;
-				// jumpSnd.play();
+				jmpSound.play();
 			}
-
 		}
 
 		gravity(delta);

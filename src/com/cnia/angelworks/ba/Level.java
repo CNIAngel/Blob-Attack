@@ -33,10 +33,10 @@ public class Level extends World {
 
 	public Level(int id, GameContainer gc) throws SlickException {
 		super(id, gc);
-		// TODO Auto-generated constructor stub
+
 		map = ResourceManager.getMap("map");
 
-		player = new Player(100, 100); // Set the parameters for the entity
+		player = new Player(0, 0); // Set the parameters for the entity
 		add(player); // Then add it to the scene
 
 		// Set up the camera to follow time
