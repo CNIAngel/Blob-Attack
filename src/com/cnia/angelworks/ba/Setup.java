@@ -56,7 +56,7 @@ public class Setup extends StateBasedGame {
 			agc.setDisplayMode(640, 400, false);
 			agc.setTargetFrameRate(60);
 			agc.setVSync(true);
-			// agc.setFullscreen(true);
+			//agc.setFullscreen(true);
 			agc.setShowFPS(false);
 			agc.start();
 		} catch (SlickException e) {

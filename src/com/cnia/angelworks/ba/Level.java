@@ -29,7 +29,8 @@ public class Level extends World {
 
 	private boolean hideTiles = false;
 	private Player player; // An instance of the Player entity
-	private TiledMap map;
+	private TiledMap map; // Reference to the Tiled Map
+	private boolean PAUSED = false; // Boolean to handle the PAUSED state, set to false by default
 
 	public Level(int id, GameContainer gc) throws SlickException {
 		super(id, gc);
@@ -68,7 +69,7 @@ public class Level extends World {
 				}
 			}
 			if (layerIndex != -1) {
-				Log.debug("Entity layer found on map");
+				Log.debug("Collision layer found on map");
 				int loaded = 0;
 				for (int w = 0; w < map.getWidth(); w++) {
 					for (int h = 0; h < map.getHeight(); h++) {
@@ -87,7 +88,7 @@ public class Level extends World {
 				}
 				Log.debug("Loaded " + loaded + " entities");
 			} else {
-				Log.info("Entity layer not found on map");
+				Log.info("Collision layer not found on map");
 			}
 		}
 	}
@@ -117,17 +118,31 @@ public class Level extends World {
 		if (input.isKeyPressed(Input.KEY_ESCAPE)) {
 			gc.exit();
 		}
+		
+		// If the P key is pressed, check to see if the
+		// game is already paused. If it isn't, pause the game.
+		// Else, resume the game.
+		/**if(input.isKeyPressed(Input.KEY_P)) {
+			if(PAUSED == false) {
+				PAUSED = true;
+				gc.pause();
+			} else {
+				PAUSED = false;
+				gc.resume();
+			}
+			
+		} */
 
 	}
 
 	@Override
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g)
 			throws SlickException {
-		// render all except entities
+		// render all except collision layer
 		if (!hideTiles) {
 			for (int l = 0; l < map.getLayerCount(); l++) {
 				String value = map.getLayerProperty(l, "type", null);
-				if (value == null || !value.equalsIgnoreCase("entity")) {
+				if (value == null || !value.equalsIgnoreCase("SOLID")) {
 					for (int w = 0; w < map.getWidth(); w++) {
 						for (int h = 0; h < map.getHeight(); h++) {
 							Image img = map.getTileImage(w, h, l);

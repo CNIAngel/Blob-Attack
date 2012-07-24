@@ -19,7 +19,7 @@ public class Player extends PhysicsEntity {
 
 	private int moveSpeed = 4, jumpSpeed = 11; // SUPER JUMP!!!!
 	private boolean isJumping, onGround, isFalling;
-	private Image img; // an Image instance for the sprite
+	private Image img, imgLeft; // an Image instance for the sprite
 	private Sound jmpSound = ResourceManager.getSound("jmpSound");
 
 	/**
@@ -31,6 +31,7 @@ public class Player extends PhysicsEntity {
 
 		img = ResourceManager.getImage("doc"); // Set the image to the desired
 												// sprite
+		imgLeft = ResourceManager.getImage("docLeft");
 		setGraphic(img); // Then set the sprite for the Player entity
 
 		// Define preset controls for the Player entity
@@ -73,9 +74,10 @@ public class Player extends PhysicsEntity {
 		if (check("LEFT")) {
 
 			if (collide(SOLID, x - 2, y) != null) {
-
+				setGraphic(imgLeft);
 				x -= 0;
 			} else {
+				setGraphic(imgLeft);
 				x -= moveSpeed;
 			}
 
@@ -84,9 +86,10 @@ public class Player extends PhysicsEntity {
 		if (check("RIGHT")) {
 
 			if (collide(SOLID, x + 3, y) != null) {
-
+				setGraphic(img);
 				x += 0;
 			} else {
+				setGraphic(img);
 				x += moveSpeed;
 			}
 

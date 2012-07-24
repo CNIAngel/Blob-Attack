@@ -12,14 +12,15 @@
     <!-- basedir -->
     <basedir path="res/" />
     <!-- Images -->
-    <image key="player" file="blobber_idle.png" />
-    <image key="doc" file="traveler.png" />
-    <image key="bg" file="bg.png" />
+    <image key="player" file="image/blobber_idle.png" />
+    <image key="doc" file="image/traveler.png" />
+    <image key="docLeft" file="image/traveler2.png" />
+    <image key="bg" file="image/bg.png" />
     <!-- Sounds -->
     <sound key="jmpSound" file="sound/Jump.wav" />
     <!-- Sheets -->
-    <sheet key="movement" file="blobber_movement.png" width="16" height="16" />
-    <sheet key="groundsheet" file="ground_tiles.png" width="16" height="16" />
+    <sheet key="movement" file="image/blobber_movement.png" width="16" height="16" />
+    <sheet key="groundsheet" file="image/ground_tiles.png" width="16" height="16" />
     
     <!-- Fonts -->
     
